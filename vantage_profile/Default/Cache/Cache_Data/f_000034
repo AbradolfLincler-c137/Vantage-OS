@@ -1,0 +1,2726 @@
+@import url("https://fonts.googleapis.com/css?family=NTR");
+body {
+  font-family: "NTR";
+}
+
+.tt {
+  text-align: center;
+}
+
+@keyframes collegname {
+  from {
+    padding-left: 20vmax;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  to {
+    padding-left: 0vmax;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes college {
+  from {
+    opacity: -1;
+    -webkit-transform: scale(1.9);
+    -ms-transform: scale(1.8);
+    transform: scale(1.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes college2 {
+  from {
+    opacity: -1;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes calendar {
+  from {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    color: white;
+  }
+  to {
+    color: #005b9f;
+    font-weight: 600;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes collegs {
+  from {
+    padding-top: 3vmax;
+    opacity: 0;
+  }
+  to {
+    padding-top: 0vmax;
+    opacity: 1;
+  }
+}
+@keyframes admission {
+  from {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    color: #ef0273;
+  }
+  to {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    color: #005b9f;
+  }
+}
+@keyframes borders {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes borders1 {
+  from {
+    background: white;
+  }
+  to {
+    background: #ebf0f1;
+  }
+}
+@keyframes colleg {
+  from {
+    padding-left: 20vmax;
+  }
+  to {
+    padding-left: 1vmax;
+  }
+}
+@keyframes colorchange {
+  from {
+    background: #e7eeff;
+  }
+  to {
+    background-image: linear-gradient(0deg, red, blue);
+  }
+}
+@keyframes extra {
+  from {
+    transform: rotate(90deg);
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  to {
+    transform: rotate(90deg);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes extralinkmenu {
+  from {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  to {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 2%;
+  left: 2vw;
+  z-index: 99;
+  font-size: 1.2vmax;
+  border: none;
+  outline: none;
+  background-color: #f19305;
+  color: white;
+  cursor: pointer;
+  padding-top: 0.3vmax;
+  width: 3vmax;
+  height: 3vmax;
+  border-radius: 3vmax;
+}
+
+#myBtn:hover {
+  background-color: #00303f;
+}
+
+.contone {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 101;
+}
+
+.navmenu::-webkit-scrollbar {
+  height: 0.5vmax !important;
+  border-radius: 10vmax;
+}
+
+.navmenu::-webkit-scrollbar-thumb {
+  background-color: #005a9fea;
+  border-radius: 10vmax;
+}
+
+.navmenu {
+  scrollbar-width: none;
+}
+
+.navmenu:hover {
+  /* overflow-x: scroll !important;
+   scrollbar-width: auto !important;*/
+  height: 4.5vmax;
+}
+
+@media screen and (max-width: 1000px) {
+  .navmenu {
+    padding: 0vmax !important;
+    /* overflow-x: scroll !important;*/
+  }
+
+  /*
+     .navmenu::-webkit-scrollbar {
+         display: none !important;
+     }*/
+}
+.navmenu {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  padding-top: 0.5vmax;
+  padding-bottom: 0.5vmax;
+  top: 2.8vmax;
+  left: 1.5vw;
+  height: 4.85vmax;
+  /* overflow-y: hidden;*/
+  background: white;
+  width: 95vw;
+  display: block;
+  white-space: nowrap;
+  /* overflow-x: hidden;*/
+  animation-name: colleg;
+  /* animation-duration: 0.5s;*/
+  animation-duration: 0.25s;
+  /*  animation-iteration-count: 1;*/
+  animation-iteration-count: 5;
+  animation-timing-function: ease;
+  z-index: 102;
+}
+.navmenu span {
+  padding-right: 1.5vmax;
+}
+.navmenu span #activeabout {
+  color: #005b9f;
+  font-weight: 600;
+  margin-left: 2vmax !important;
+  font-size: 1.2vmax;
+  border-bottom-left-radius: 0.2vmax;
+  border-bottom-right-radius: 0.2vmax;
+  border-bottom: 3px solid #005b9f !important;
+}
+.navmenu span span #activeabout1 {
+  color: #005b9f;
+  font-weight: 600;
+  margin-left: 2vmax !important;
+  font-size: 1.3vmax;
+  border-bottom-left-radius: 0.2vmax;
+  border-bottom-right-radius: 0.2vmax;
+}
+.navmenu span .activeabout {
+  color: #005b9f;
+  font-weight: 600;
+  margin-left: 3vmax !important;
+  font-size: 1.3vmax;
+  border-bottom-left-radius: 0.2vmax;
+  border-bottom-right-radius: 0.2vmax;
+  border-bottom: 3px solid #005b9f !important;
+}
+.navmenu span label {
+  font-size: 1.3vmax;
+  color: #474646;
+  font-weight: 500;
+}
+.navmenu span label a {
+  text-decoration: none;
+  color: inherit;
+}
+.navmenu span b {
+  font-size: 1.3vmax;
+  font-weight: 500;
+  color: #4d4d4d;
+}
+.navmenu label:hover {
+  color: #005b9f;
+  font-weight: 600;
+}
+.navmenu .dropmenu:hover > .dropdown {
+  display: block;
+}
+.navmenu .departments .row {
+  padding-left: 2vmax;
+  padding-right: 1vmax;
+  padding-top: 1vmax;
+  padding-bottom: 1.5vmax;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.068);
+}
+.navmenu .departments .row a {
+  font-size: 1.3vmax;
+  text-decoration: none;
+}
+.navmenu .departments .row i {
+  padding-right: 1vmax;
+}
+.navmenu .dropdown {
+  animation-name: colleg;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  display: none;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.925);
+  top: 5.4vmax;
+  padding-top: 1.2vmax;
+  padding-bottom: 1vmax;
+  z-index: 100;
+  width: 94%;
+  white-space: normal !important;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: -2px;
+}
+.navmenu .dropdown .departments span {
+  width: 25%;
+}
+.navmenu .dropdown .departments span i {
+  font-size: 1.2vmax;
+  color: #005b9f;
+  margin-top: -2px;
+}
+.navmenu .dropdown .departments label {
+  width: 75%;
+}
+.navmenu .dropdown .active {
+  color: #005b9f;
+  font-weight: 600;
+}
+.navmenu .dropdown h1 {
+  font-size: 1.3vmax;
+  padding: 0.4vmax;
+  color: #4d4d4d;
+  border-radius: 10vmax;
+}
+.navmenu .dropdown h1 b {
+  padding-right: 1vmax;
+  padding-top: 1.5vmax;
+  font-size: 1.2vmax;
+  color: #005b9f;
+}
+.navmenu .dropdown h1:hover {
+  color: #005b9f;
+}
+.navmenu .dropdown .aboutlink {
+  border-right: 1px solid rgba(128, 128, 128, 0.404);
+}
+.navmenu .dropdown #moreabout ::-webkit-scrollbar {
+  height: 1vmax;
+}
+.navmenu .dropdown #moreabout {
+  padding-right: 2vmax !important;
+  scrollbar-width: none;
+}
+.navmenu .dropdown #moreabout .imgprin {
+  background: inherit !important;
+  height: 20vmax !important;
+}
+.navmenu .dropdown #moreabout .col-sm-4, .navmenu .dropdown #moreabout .col-sm-6 {
+  animation-name: colleg;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  background-color: inherit;
+  padding: 1vmax;
+  border-radius: 2vmax;
+  padding-top: 1vmax;
+  height: 26vmax;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: none;
+}
+.navmenu .dropdown #moreabout .col-sm-4 .imagesofprincipal, .navmenu .dropdown #moreabout .col-sm-6 .imagesofprincipal {
+  text-align: center;
+}
+.navmenu .dropdown #moreabout .col-sm-4 .imagesofprincipal img, .navmenu .dropdown #moreabout .col-sm-6 .imagesofprincipal img {
+  width: 9vmax;
+  height: 9vmax;
+  border-radius: 10vmax;
+}
+.navmenu .dropdown #moreabout .col-sm-4 .imagesofprincipal label, .navmenu .dropdown #moreabout .col-sm-6 .imagesofprincipal label {
+  color: #464646;
+}
+.navmenu .dropdown #moreabout .col-sm-4 h1, .navmenu .dropdown #moreabout .col-sm-6 h1 {
+  font-size: 1.6vmax;
+  border-bottom: 2px solid #005b9f;
+  border-radius: 0.2vmax;
+  color: #005b9f;
+}
+.navmenu .dropdown #moreabout .col-sm-4 div, .navmenu .dropdown #moreabout .col-sm-6 div {
+  font-size: 1.3vmax;
+  text-align: justify;
+  color: #504f4f;
+}
+
+.rowone {
+  border-radius: 0.1vmax;
+  background-color: #005b9f;
+  width: 100%;
+  position: absolute;
+  left: 0vw;
+}
+.rowone i {
+  font-size: 1vmax;
+  padding-right: 0vmax;
+  padding-left: 1vmax;
+  border-radius: 1.6vmax;
+  opacity: 0.95;
+  color: white;
+  padding-top: -0.5vmax;
+}
+.rowone #link {
+  width: 65%;
+  text-align: left;
+  animation-name: collegname;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  color: white;
+  font-size: 1.6vmax;
+  padding: 0.2vmax;
+}
+.rowone #link i {
+  padding-right: 1vmax;
+  font-size: 1.4vmax;
+}
+.rowone #link a i {
+  padding-right: 1vmax;
+  font-size: 1.3vmax;
+}
+.rowone #link b {
+  font-size: 1.9vmax;
+  color: #e7eeff;
+  font-weight: 500;
+}
+.rowone #link a {
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  font-size: 1.6vmax;
+}
+.rowone #search {
+  padding-left: 5vmax;
+  width: 39%;
+}
+.rowone #search input {
+  width: 50%;
+  opacity: 0.95;
+  height: 1.8vmax;
+  border-radius: 5vmax;
+  font-size: 1.3vmax;
+  color: black;
+  padding-left: 2vmax;
+  padding-top: 0.3vmax;
+  border: 0;
+  outline: 0;
+  transition: width 0.5s;
+}
+.rowone #search button {
+  background: inherit;
+  color: white;
+  outline: 0;
+  border: 0;
+  font-size: 1.6vmax;
+}
+.rowone #more {
+  width: 1%;
+  padding-top: 0.5vmax;
+}
+.rowone #more i {
+  font-size: 1vmax;
+}
+
+body.sitmainpage .contentsb {
+  width: 100%;
+  position: relative;
+  margin-top: 2vmax;
+  margin-bottom: 2vmax;
+  padding-bottom: 1vmax;
+}
+body.sitmainpage .contentsb table {
+  width: 100%;
+  border-radius: 0.5vmax;
+}
+body.sitmainpage .contentsb table tr #mca:hover {
+  opacity: 1;
+  height: 17vmax;
+  transform: scale(1);
+}
+body.sitmainpage .contentsb table tr #mca:hover > h4 {
+  margin-bottom: 7vmax;
+  background: rgba(0, 0, 0, 0.63);
+  opacity: 1 !important;
+}
+body.sitmainpage .contentsb table tr #mca {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../assests/1161510u43BG20i.jpg");
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  opacity: 1;
+  height: 17vmax;
+  transform: scale(0.99);
+  transition: transform 0.5s;
+}
+body.sitmainpage .contentsb table tr #mca1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../assests/oie_1161158OFwZSvoZ.jpg");
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  opacity: 1;
+  height: 17vmax;
+  transform: scale(0.99);
+  transition: transform 0.5s;
+}
+body.sitmainpage .contentsb table tr #mca2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../assests/2018-12-14.jpg");
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  opacity: 1;
+  height: 17vmax;
+  transform: scale(0.99);
+  transition: transform 0.5s;
+}
+body.sitmainpage .contentsb table tr #admission p {
+  animation-name: admission;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  color: red;
+}
+body.sitmainpage .contentsb table tr th h4 {
+  font-size: 2.7vmax;
+}
+body.sitmainpage .contentsb table tr td {
+  background: white;
+  width: 25%;
+  padding-top: 0.7vmax;
+}
+body.sitmainpage .contentsb table tr td h4 {
+  position: absolute;
+  bottom: 0vmax;
+  transition: margin 0.5s;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.288);
+  padding: 1vmax;
+  font-size: 1.6vmax;
+  text-align: center;
+  font-weight: 600;
+}
+body.sitmainpage .contentsb table tr td h4 i {
+  padding-left: 1vmax;
+  font-size: 1.1vmax;
+}
+body.sitmainpage .contentsb table tr td h4 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+body.sitmainpage .newsevent {
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../assests/news-banner.jpg") !important;
+}
+body.sitmainpage .newsevent .news {
+  overflow-y: scroll;
+  height: 19vmax;
+}
+body.sitmainpage .place {
+  margin-bottom: 3vmax;
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.85)), url("../assests/placement.svg") !important;
+}
+body.sitmainpage .place .placement {
+  padding-top: 1.5vmax !important;
+  padding-bottom: 1.5vmax !important;
+}
+body.sitmainpage .place .placement .row {
+  margin: 1vmax;
+}
+body.sitmainpage .place .placement .row .circle:hover {
+  animation: none;
+}
+body.sitmainpage .place .placement .row .circle {
+  animation-name: borders;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  border-radius: 10vmax;
+  color: red;
+  height: 12vmax;
+  padding: 1vmax;
+  font-weight: bold;
+  width: 12vmax;
+  display: table;
+  margin: 0.1vmax auto;
+}
+body.sitmainpage .place .placement .row .b1 .circle {
+  border: 20px #00b8d4 solid;
+  background: white;
+}
+body.sitmainpage .place .placement .row .b1 p {
+  color: #00b8d4;
+}
+body.sitmainpage .place .placement .row .b1 .arrowmark i {
+  color: #00b8d4;
+}
+body.sitmainpage .place .placement .row .b1 .arrowmark span {
+  color: #00b8d4;
+}
+body.sitmainpage .place .placement .row .b2 .circle {
+  border: 20px #fbc02d solid;
+  background: white;
+}
+body.sitmainpage .place .placement .row .b2 p {
+  color: #fbc02d;
+}
+body.sitmainpage .place .placement .row .b2 .arrowmark i {
+  color: #fbc02d !important;
+}
+body.sitmainpage .place .placement .row .b2 .arrowmark span {
+  color: #fbc02d !important;
+}
+body.sitmainpage .place .placement .row .b3 .circle {
+  border: 20px #ef0273 solid;
+  background: white;
+}
+body.sitmainpage .place .placement .row .b3 p {
+  color: #ef0273;
+}
+body.sitmainpage .place .placement .row .b3 .arrowmark i {
+  color: #ef0273 !important;
+}
+body.sitmainpage .place .placement .row .b3 .arrowmark span {
+  color: #ef0273 !important;
+}
+body.sitmainpage .place .placement .row .b4 .circle {
+  border: 20px #566175 solid;
+  background: white;
+}
+body.sitmainpage .place .placement .row .b4 p {
+  color: #566175;
+}
+body.sitmainpage .place .placement .row .b4 .arrowmark i {
+  color: #566175 !important;
+}
+body.sitmainpage .place .placement .row .b4 .arrowmark span {
+  color: #566175 !important;
+}
+body.sitmainpage .place .placement .row .block .circle p {
+  padding-top: 0.6vmax;
+  margin: 0vmax !important;
+  border: 0vmax !important;
+  font-size: 2vmax;
+  border-radius: 12vmax;
+}
+body.sitmainpage .place .placement .row .block .circle p i {
+  font-size: 1.3vmax;
+  padding-right: 0.5vmax;
+}
+body.sitmainpage .place .placement .row .block .line {
+  display: none;
+  margin: 0vmax !important;
+  margin: 0vmax !important;
+  padding: 0vmax !important;
+  height: 1.9vmax;
+  background: #00b8d4;
+}
+body.sitmainpage .place .placement .row .block .arrowmark {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+body.sitmainpage .place .placement .row .block .arrowmark i {
+  margin: 0vmax !important;
+  padding: 0vmax !important;
+  font-size: 5vmax;
+}
+body.sitmainpage .place .placement .row .block .arrowmark span {
+  font-weight: 600;
+  font-size: 1.9vmax;
+}
+body.sitmainpage .place .placement .row .block .arrowmark label {
+  color: white;
+  font-weight: 500;
+  font-size: 1.6vmax;
+}
+body.sitmainpage .place .placement .row .block {
+  text-align: center;
+  vertical-align: middle;
+}
+body.sitmainpage .place .placement .row .circle p {
+  vertical-align: middle;
+  display: table-cell;
+}
+body.sitmainpage .quick {
+  width: 100%;
+}
+body.sitmainpage .quick .quickfacts {
+  border-radius: 0.5vmax;
+  position: relative;
+  top: -1.6vmax;
+  z-index: 100;
+}
+body.sitmainpage .quick .quickfacts table {
+  width: 100%;
+  background: #005b9f;
+  border-radius: 0.5vmax;
+}
+body.sitmainpage .quick .quickfacts table tr td {
+  font-size: 1.5vmax;
+  color: white;
+  border: 0 !important;
+  outline: 0 !important;
+}
+body.sitmainpage .quick .quickfacts table tr td h1 {
+  padding-top: 1vmax;
+  font-size: 2.2vmax;
+}
+body.sitmainpage .quick .quickfacts table .contentsa {
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.329);
+}
+body.sitmainpage .quick .quickfacts table .contents td {
+  padding-left: 2vmax;
+}
+body.sitmainpage .rowthree {
+  margin-top: 5.7vmax;
+  border-top: 4px solid #ff7b00;
+}
+body.sitmainpage .rowthree .carousel {
+  box-shadow: 10px 24px 58px 20px rgba(94, 94, 94, 0.4);
+}
+body.sitmainpage .rowthree .carousel .carousel-control-prev i,
+body.sitmainpage .rowthree .carousel .carousel-control-next i {
+  font-size: 3vmax;
+  color: #d4d4d4 !important;
+}
+body.sitmainpage .rowthree .carousel img {
+  height: 35vmax;
+  animation-name: college2;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+body.sitmainpage .rowthree .carousel a {
+  filter: blur(0.1px);
+  opacity: 1;
+  background: rgba(233, 233, 233, 0.041);
+}
+body.sitmainpage .rowthree .carousel .carousel-caption {
+  position: absolute;
+  left: 1vmax;
+  bottom: 2vmax;
+  background: rgba(255, 255, 255, 0.493);
+  padding: 1vmax;
+  text-align: left;
+  width: auto;
+  border-radius: 0.5vmax;
+  animation-name: borders;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+body.sitmainpage .rowthree .carousel .carousel-caption h5 {
+  font-size: 2.5vmax;
+}
+body.sitmainpage .rowthree .carousel .carousel-caption p {
+  font-size: 1.7vmax;
+  color: #3d3c3c !important;
+  font-weight: 500;
+}
+body.sitmainpage .modal {
+  background: rgba(128, 128, 128, 0.205);
+}
+body.sitmainpage .modal .modal-dialog .modal-content {
+  position: fixed;
+  left: 5vw;
+  top: 1vmax;
+  background: #e7eeff;
+  width: 90vw;
+}
+body.sitmainpage .modal .modal-dialog .modal-content h4 {
+  font-size: 1.7vmax;
+  color: #005b9f;
+  font-weight: 600;
+}
+body.sitmainpage .modal .modal-dialog .modal-content iframe {
+  width: 100%;
+  height: 35vmax;
+}
+body.sitmainpage .twolinks {
+  position: fixed;
+  bottom: 1%;
+  right: 0%;
+  background: #102027;
+  width: auto;
+  height: auto;
+  padding: 0.6vmax;
+  z-index: 99999999999;
+  border-radius: 0.4vmax;
+}
+body.sitmainpage .twolinks span {
+  color: white;
+  font-weight: 600;
+  font-size: 1.2vmax;
+}
+body.sitmainpage .twolinks a {
+  text-decoration: none;
+  font-size: 1.2vmax;
+  color: white;
+  font-weight: 600;
+}
+body.sitmainpage .gold h1 {
+  text-align: center;
+  font-size: 1.9vmax;
+  color: #005b9f;
+  font-weight: 600;
+}
+body.sitmainpage .gold h1 i {
+  font-size: 4vmax;
+  color: #005a9fa2;
+}
+body.sitmainpage .gold .newgoldmedalist {
+  background: transparent;
+  box-shadow: none;
+}
+body.sitmainpage .gold .newgoldmedalist a {
+  color: red;
+}
+body.sitmainpage .gold .newgoldmedalist .carousel-indicators li {
+  display: inline-block;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  width: 1vmax !important;
+  border-radius: 10vmax;
+  margin-left: 1vmax;
+  position: relative;
+  bottom: -2vmax;
+  height: 0.4vmax;
+  background-color: #005b9f;
+  margin-bottom: 1vmax;
+}
+body.sitmainpage .gold .newgoldmedalist .carousel-inner table {
+  background: transparent;
+  box-shadow: none;
+  margin: auto;
+  width: 60%;
+}
+body.sitmainpage .gold .newgoldmedalist .carousel-inner table tr td {
+  width: 40vmax !important;
+  border: 10px solid white;
+}
+body.sitmainpage .gold .newgoldmedalist .carousel-inner table .cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 0.3vmax;
+}
+body.sitmainpage .gold .newgoldmedalist .carousel-inner table .cards img {
+  margin-top: 2vmax;
+  text-align: center;
+  height: 10vmax;
+  width: 10vmax;
+  border-radius: 10vmax;
+  margin-bottom: 1vmax;
+}
+body.sitmainpage .gold .newgoldmedalist .carousel-inner table .cards p {
+  font-size: 1.4vmax;
+  color: #005b9f;
+}
+body.sitmainpage .gold .newgoldmedalist .carousel-inner table .cards h2 a {
+  font-size: 1.5vmax;
+  padding-top: 1vmax;
+}
+body.sitmainpage .news {
+  display: none;
+}
+body.sitmainpage .news .col-sm-6 {
+  background: #e7eeff;
+  border-radius: 1.5vmax;
+  height: 25vmax !important;
+  border: 15px solid white;
+  overflow-y: scroll;
+}
+body.sitmainpage .news .col-sm-6 .contents .col-sm-3 {
+  animation-name: calendar;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  text-align: center;
+}
+body.sitmainpage .news .col-sm-6 .contents .col-sm-3 span {
+  font-size: 1.3vmax;
+}
+body.sitmainpage .news .col-sm-6 .contents .col-sm-3 i {
+  font-size: 1.6vmax;
+  color: #ef0273;
+  padding-right: 0.5vmax;
+}
+body.sitmainpage .news .col-sm-6 .contents .col-sm-9:hover {
+  color: #005b9f;
+  font-weight: 600;
+}
+body.sitmainpage .news .col-sm-6 .contents .col-sm-9 {
+  font-size: 1.4vmax;
+}
+body.sitmainpage .news h1 {
+  font-size: 1.8vmax;
+  color: #005b9f;
+  font-weight: 500;
+}
+body.sitmainpage .news h1 b {
+  font-size: 2.1vmax;
+  font-weight: 500;
+  color: inherit;
+}
+body.sitmainpage .news h1 i {
+  font-size: 1.5vmax !important;
+}
+body.sitmainpage .announce .announcement .row {
+  margin: 1vmax;
+  border-radius: 1vmax;
+  margin-left: 6.5vmax;
+  margin-right: 6.5vmax;
+}
+body.sitmainpage .announce .announcement table {
+  margin: 1vmax;
+  width: 100%;
+}
+body.sitmainpage .announce .announcement table tr .active {
+  border-bottom: 4px solid #ef0273;
+  color: #005b9f;
+}
+body.sitmainpage .announce .announcement table tr th:hover {
+  animation-name: extra;
+  animation-duration: 1.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  border-bottom: 4px solid #ef0273;
+}
+body.sitmainpage .announce .announcement table tr th {
+  width: 24%;
+  font-weight: 500;
+  font-size: 1.6vmax;
+  border-bottom: 4px solid #005b9f;
+  transition: border 0.2s;
+  border-left: 10px solid white;
+  padding: 0.3vmax;
+  border-radius: 10vmax;
+  color: #373838;
+  font-weight: 600;
+  text-align: center;
+}
+body.sitmainpage .announce .announcement table tr th i {
+  font-size: 4vmax !important;
+  color: #ef02748c;
+}
+body.sitmainpage .announce .announcement table tr th i {
+  font-size: 1vmax;
+}
+body.sitmainpage .announce .announcement table tbody tr td {
+  padding: 1vmax;
+  padding-top: 2vmax;
+}
+body.sitmainpage .announce .announcement table tbody tr td i {
+  color: #005b9f;
+  font-size: 1.4vmax;
+  font-weight: 600;
+}
+body.sitmainpage .announce td::-webkit-scrollbar {
+  height: 0.7vmax !important;
+  border-radius: 10vmax;
+}
+body.sitmainpage .announce td ::-webkit-scrollbar-thumb {
+  background-color: #005a9fea;
+  border-radius: 10vmax;
+}
+body.sitmainpage .announce .announcement table tbody tr td #extracontentdisplay .col-sm-12 {
+  height: 15vmax;
+  overflow-y: scroll;
+  animation-name: collegs;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+body.sitmainpage .announce .announcement table tbody tr td a {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 1vmax;
+  color: black;
+  font-size: 1.5vmax;
+}
+
+body.departmentpage .first::-webkit-scrollbar,
+body.institutionpage .first::-webkit-scrollbar {
+  width: 0.2vmax;
+}
+body.departmentpage .first::-webkit-scrollbar-thumb,
+body.institutionpage .first::-webkit-scrollbar-thumb {
+  background: #005b9f;
+}
+body.departmentpage .first,
+body.institutionpage .first {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 2.8vmax;
+  z-index: 99;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 1vmax;
+  max-height: 90vh;
+  scrollbar-color: rgba(128, 128, 128, 0.315) white;
+  scrollbar-width: thin !important;
+  width: 20vw;
+}
+body.departmentpage .first #active,
+body.institutionpage .first #active {
+  font-weight: 600;
+  border-radius: 6vmax;
+  color: #005b9f;
+}
+body.departmentpage .first #active i,
+body.institutionpage .first #active i {
+  color: #005b9f;
+}
+body.departmentpage .first label:hover,
+body.institutionpage .first label:hover {
+  border-radius: 6vmax;
+  color: #005b9f;
+  font-weight: 600;
+  margin-left: 0.3vmax;
+}
+body.departmentpage .first label:hover i,
+body.institutionpage .first label:hover i {
+  color: #005b9f;
+}
+@media screen and (max-width: 600px) {
+  body.departmentpage .first label i,
+body.institutionpage .first label i {
+    display: none;
+  }
+}
+body.departmentpage .first label,
+body.institutionpage .first label {
+  width: 100%;
+  padding: 0.4vmax;
+  margin-bottom: 1vmax;
+  padding-left: 2vmax;
+  font-size: 1.3vmax;
+  font-weight: 500;
+  color: #5f5f5f;
+  transition: margin 0.5s;
+  border-bottom: 1px solid rgba(209, 209, 209, 0.308);
+}
+body.departmentpage .first label i,
+body.institutionpage .first label i {
+  padding-right: 1vmax;
+  font-size: 1.1vmax;
+  color: #263238;
+}
+body.departmentpage .second,
+body.institutionpage .second {
+  min-height: 70vh !important;
+  width: 100%;
+  padding-left: 2vmax;
+  padding-right: 2vmax;
+  margin-top: 2.3vmax;
+  margin-bottom: 1vmax;
+  font-size: 1.4vmax;
+  color: #5f6368;
+  padding-top: 2vmax;
+  text-align: left;
+  margin-top: 5vmax !important;
+  background: white !important;
+}
+body.departmentpage .second div ol li,
+body.institutionpage .second div ol li {
+  padding-bottom: 1vmax;
+}
+body.departmentpage .second table.programmenew,
+body.institutionpage .second table.programmenew {
+  background: #e7eeff;
+  border-radius: 0.4vmax;
+  width: 60%;
+}
+body.departmentpage .second table.programmenew thead tr th,
+body.institutionpage .second table.programmenew thead tr th {
+  padding-left: 1vmax !important;
+  padding-top: 1vmax !important;
+}
+body.departmentpage .second table.programmenew thead tr th i,
+body.institutionpage .second table.programmenew thead tr th i {
+  padding-right: 1vmax !important;
+}
+body.departmentpage .second table.programmenew tbody tr td,
+body.institutionpage .second table.programmenew tbody tr td {
+  padding-left: 4vmax !important;
+  padding-top: 1vmax !important;
+}
+body.departmentpage .second table.facultyinfo,
+body.institutionpage .second table.facultyinfo {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 90%;
+}
+body.departmentpage .second table.facultyinfo tr th,
+body.institutionpage .second table.facultyinfo tr th {
+  padding-left: 2vmax !important;
+  width: 20%;
+}
+body.departmentpage .second table.facultyinfo tr td,
+body.institutionpage .second table.facultyinfo tr td {
+  padding-bottom: 0.5vmax !important;
+  padding-right: 1.2vmax !important;
+}
+body.departmentpage .second p,
+body.institutionpage .second p {
+  text-align: justify;
+}
+body.departmentpage .second p #offered,
+body.institutionpage .second p #offered {
+  color: #005b9f;
+  font-size: 1.3vmax;
+  font-weight: 600;
+}
+body.departmentpage .second .newgoldmedalist,
+body.institutionpage .second .newgoldmedalist {
+  width: 80%;
+}
+body.departmentpage .second .newgoldmedalist .carousel-indicators li,
+body.institutionpage .second .newgoldmedalist .carousel-indicators li {
+  display: inline-block;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  padding-left: 2vmax;
+  margin-left: 1vmax;
+  position: relative;
+  bottom: -3vmax;
+  height: 0.4vmax;
+  background-color: #dfdfdf;
+}
+body.departmentpage .second .newgoldmedalist .carousel-indicators .active,
+body.institutionpage .second .newgoldmedalist .carousel-indicators .active {
+  background-color: #005b9f;
+}
+body.departmentpage .second .newgoldmedalist h2,
+body.institutionpage .second .newgoldmedalist h2 {
+  color: #1565c0;
+  font-size: 1.3vmax;
+  font-weight: 600;
+  padding: 1vmax;
+}
+body.departmentpage .second .newgoldmedalist .carousel-inner .item table,
+body.institutionpage .second .newgoldmedalist .carousel-inner .item table {
+  margin: auto;
+  width: 100%;
+}
+body.departmentpage .second .newgoldmedalist .carousel-inner .item table .cards,
+body.institutionpage .second .newgoldmedalist .carousel-inner .item table .cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+body.departmentpage .second .newgoldmedalist .carousel-inner .item table tr td,
+body.institutionpage .second .newgoldmedalist .carousel-inner .item table tr td {
+  border: 0;
+  text-align: center;
+}
+body.departmentpage .second .newgoldmedalist .carousel-inner .item table tr td img,
+body.institutionpage .second .newgoldmedalist .carousel-inner .item table tr td img {
+  text-align: center;
+  height: 10vmax;
+  width: 10vmax;
+  border-radius: 10vmax;
+}
+body.departmentpage .second .newgoldmedalist .carousel-inner .item table tr td p,
+body.institutionpage .second .newgoldmedalist .carousel-inner .item table tr td p {
+  color: #2980b9;
+  font-size: 1.3vmax;
+  padding: 1vmax;
+}
+body.departmentpage .second .supportingstaff tbody tr td,
+body.institutionpage .second .supportingstaff tbody tr td {
+  font-size: 1.3vmax;
+  color: #5f6368;
+}
+body.departmentpage .second .supportingstaff tbody tr td b,
+body.institutionpage .second .supportingstaff tbody tr td b {
+  color: #ef0273;
+}
+body.departmentpage .second .supportingstaff tbody tr td i,
+body.institutionpage .second .supportingstaff tbody tr td i {
+  font-size: 1vmax;
+  color: #ef0273;
+  padding-right: 0.6vmax;
+}
+body.departmentpage .second .slideshow,
+body.institutionpage .second .slideshow {
+  padding-left: 0vmax !important;
+  padding-right: 0vmax !important;
+  box-shadow: 10px 10px 18px 10px rgba(148, 148, 148, 0.3) !important;
+  margin-bottom: 7vmax;
+  opacity: 1;
+  z-index: 102;
+}
+body.departmentpage .second .slideshow a,
+body.institutionpage .second .slideshow a {
+  background: transparent;
+}
+body.departmentpage .second .slideshow a span,
+body.institutionpage .second .slideshow a span {
+  opacity: 0.5;
+  color: #ebf0f1;
+}
+body.departmentpage .second .slideshow .carousel-indicators li,
+body.institutionpage .second .slideshow .carousel-indicators li {
+  display: inline-block;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  padding-left: 1vmax;
+  margin-left: 1vmax;
+  margin-bottom: 1vmax;
+  height: 0.3vmax;
+  position: relative;
+  bottom: -3vmax;
+  background-color: white;
+}
+body.departmentpage .second .slideshow .carousel-indicators .active,
+body.institutionpage .second .slideshow .carousel-indicators .active {
+  background-color: #005b9f;
+}
+body.departmentpage .second .slideshow .carousel-inner > .item > .carousel-caption,
+body.institutionpage .second .slideshow .carousel-inner > .item > .carousel-caption {
+  position: absolute;
+  left: 60%;
+  left: 1%;
+  animation-name: extra;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  background: rgba(255, 255, 255, 0.541);
+  width: 70vw;
+  height: 30%;
+}
+body.departmentpage .second .slideshow .carousel-inner > .item > .carousel-caption p::-webkit-scrollbar,
+body.institutionpage .second .slideshow .carousel-inner > .item > .carousel-caption p::-webkit-scrollbar {
+  width: 0.3vmax;
+}
+body.departmentpage .second .slideshow .carousel-inner > .item > .carousel-caption p::-webkit-scrollbar-thumb,
+body.institutionpage .second .slideshow .carousel-inner > .item > .carousel-caption p::-webkit-scrollbar-thumb {
+  background: #3450ed4f;
+}
+body.departmentpage .second .slideshow .carousel-inner > .item > .carousel-caption p,
+body.institutionpage .second .slideshow .carousel-inner > .item > .carousel-caption p {
+  z-index: 100;
+  padding-left: 1vmax;
+  padding-top: 0.5vmax;
+  font-style: italic;
+  line-height: 3vmax;
+  text-align: justify;
+  opacity: 1;
+  text-shadow: none;
+  font-size: 1.5vmax;
+  color: #354860;
+  height: 98%;
+  overflow-y: scroll;
+}
+body.departmentpage .second .slideshow .carousel-inner > .item > img,
+body.institutionpage .second .slideshow .carousel-inner > .item > img {
+  opacity: 1 !important;
+  height: 35vmax !important;
+  width: 100vmax !important;
+  animation-name: extra;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+body.departmentpage .second label,
+body.institutionpage .second label {
+  padding-left: 0.6vmax;
+}
+body.departmentpage .second #videocontent,
+body.institutionpage .second #videocontent {
+  display: none;
+}
+body.departmentpage .second table.las thead tr,
+body.institutionpage .second table.las thead tr {
+  background-image: linear-gradient(-30deg, #ff7b00, #ff7b00);
+}
+body.departmentpage .second table.las thead tr th,
+body.institutionpage .second table.las thead tr th {
+  border-radius: 10vmax !important;
+  text-align: center;
+  color: white;
+  padding: 0.7vmax;
+}
+body.departmentpage .second table.las tbody tr td,
+body.institutionpage .second table.las tbody tr td {
+  padding-top: 1vmax;
+  padding-left: 2vmax;
+}
+body.departmentpage .second table.facilities thead tr,
+body.institutionpage .second table.facilities thead tr {
+  background: #ebf0f1;
+}
+body.departmentpage .second table.facilities thead tr #col2,
+body.institutionpage .second table.facilities thead tr #col2 {
+  width: 10%;
+}
+body.departmentpage .second table.facilities thead tr #col1,
+body.institutionpage .second table.facilities thead tr #col1 {
+  width: 15%;
+}
+body.departmentpage .second table.facilities thead tr th,
+body.institutionpage .second table.facilities thead tr th {
+  color: #005b9f;
+  padding-left: 1vmax !important;
+  padding: 0.7vmax !important;
+}
+body.departmentpage .second table.facilities tbody tr td,
+body.institutionpage .second table.facilities tbody tr td {
+  color: #212224 !important;
+  padding-top: 1vmax;
+  padding-left: 1vmax;
+}
+body.departmentpage .second table.facilities tbody tr th,
+body.institutionpage .second table.facilities tbody tr th {
+  color: #ef0273;
+}
+body.departmentpage .second .popup,
+body.institutionpage .second .popup {
+  font-size: 1.1vmax;
+  z-index: 999999999;
+  width: 100vw;
+  margin: auto;
+}
+body.departmentpage .second .popup .modal-content,
+body.institutionpage .second .popup .modal-content {
+  /* 80% of window height */
+  border: 0;
+  outline: 0;
+  border-radius: 0vmax;
+  width: 51vw;
+}
+body.departmentpage .second .popup table,
+body.institutionpage .second .popup table {
+  width: 100%;
+}
+body.departmentpage .second .popup .modal-body img,
+body.departmentpage .second .popup .modal-body video,
+body.institutionpage .second .popup .modal-body img,
+body.institutionpage .second .popup .modal-body video {
+  width: 100%;
+  height: 25vmax;
+}
+body.departmentpage .second .popup .modal-header,
+body.institutionpage .second .popup .modal-header {
+  height: 4vmax;
+  background-color: #00303f;
+  color: white;
+}
+body.departmentpage .second .popup .modal-header h4,
+body.institutionpage .second .popup .modal-header h4 {
+  padding-top: 0.8vmax;
+  font-size: 1.4vmax;
+  text-align: center;
+}
+body.departmentpage .second .popup .modal-header label,
+body.institutionpage .second .popup .modal-header label {
+  position: relative;
+  top: -3.5vh;
+  padding-right: 1vmax;
+  font-size: 1.2vmax;
+  color: white;
+  opacity: 1;
+}
+body.departmentpage .second img.background,
+body.institutionpage .second img.background {
+  width: 100%;
+  height: 30vmax;
+  padding-bottom: 2vmax;
+}
+body.departmentpage .second h1,
+body.institutionpage .second h1 {
+  font-size: 1.5vmax;
+  font-weight: 500;
+}
+body.departmentpage .second label,
+body.institutionpage .second label {
+  font-weight: 500;
+  font-size: 1.4vmax;
+}
+body.departmentpage .second span,
+body.institutionpage .second span {
+  font-weight: 500;
+  font-size: 1.7vmax;
+}
+body.departmentpage .second *,
+body.institutionpage .second * {
+  animation-name: extralinkmenu;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+body.departmentpage .second .row .col-sm-6,
+body.institutionpage .second .row .col-sm-6 {
+  padding-right: 1vmax;
+  margin-top: 2vmax;
+  border-radius: 1vmax;
+}
+body.departmentpage .second table.cards,
+body.institutionpage .second table.cards {
+  margin: auto;
+  width: 90%;
+  margin-top: 1vmax;
+}
+body.departmentpage .second table.cards thead,
+body.institutionpage .second table.cards thead {
+  border-top: 3px solid #263238;
+  border-radius: 2vmax;
+}
+body.departmentpage .second table.cards thead tr,
+body.institutionpage .second table.cards thead tr {
+  height: 1.5vh;
+}
+body.departmentpage .second table.cards thead tr td,
+body.institutionpage .second table.cards thead tr td {
+  padding-top: 0.3vmax;
+  text-align: center;
+  width: 10%;
+}
+body.departmentpage .second table.cards thead tr th,
+body.institutionpage .second table.cards thead tr th {
+  padding-top: 0.3vmax;
+  padding-left: 1vmax;
+  background: #ffffff;
+  color: #5f6368;
+  font-size: 1vmax;
+}
+body.departmentpage .second table.cards thead tr th i,
+body.institutionpage .second table.cards thead tr th i {
+  font-weight: 500;
+  font-size: 1.1vmax;
+  color: #1565c0;
+}
+body.departmentpage .second table.cards tbody tr td,
+body.institutionpage .second table.cards tbody tr td {
+  padding-left: 1vmax;
+  font-weight: 500;
+  font-size: 1.2vmax;
+}
+body.departmentpage .second table.cards tbody tr td img,
+body.institutionpage .second table.cards tbody tr td img {
+  margin-left: 23%;
+  margin-top: 0.6vmax;
+  height: 8vmax;
+  width: 8vmax;
+  border-radius: 10vmax;
+  margin-bottom: 0.4vmax;
+}
+body.departmentpage .second table.cards tbody tr td i,
+body.institutionpage .second table.cards tbody tr td i {
+  color: #1565c0;
+}
+body.departmentpage .second table.cards tfoot,
+body.institutionpage .second table.cards tfoot {
+  display: none;
+  border-radius: 1.5vmax;
+  background-image: linear-gradient(-10deg, #ff7b00, #ff7b00);
+  color: white;
+}
+body.departmentpage .second table.cards tfoot tr #area,
+body.institutionpage .second table.cards tfoot tr #area {
+  height: 6.4vmax !important;
+}
+body.departmentpage .second table.cards tfoot tr th,
+body.institutionpage .second table.cards tfoot tr th {
+  font-weight: 600;
+  font-size: 1.2vmax;
+  padding-left: 0.8vmax;
+}
+body.departmentpage .second table.cards tfoot tr th span,
+body.institutionpage .second table.cards tfoot tr th span {
+  font-size: 1.2vmax;
+}
+body.departmentpage .second table.cards tfoot tr td,
+body.institutionpage .second table.cards tfoot tr td {
+  font-size: 1.2vmax;
+}
+body.departmentpage .second table.cards tfoot tr td i,
+body.institutionpage .second table.cards tfoot tr td i {
+  color: white;
+}
+body.departmentpage .second table.events,
+body.institutionpage .second table.events {
+  width: 98%;
+}
+body.departmentpage .second table.events tbody tr td,
+body.institutionpage .second table.events tbody tr td {
+  padding: 1vmax;
+  margin-top: 0.5vmax;
+}
+body.departmentpage .second table.events thead tr,
+body.institutionpage .second table.events thead tr {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.329);
+}
+body.departmentpage .second table.events thead tr #active,
+body.institutionpage .second table.events thead tr #active {
+  font-weight: 600;
+  font-size: 1.4vmax;
+  color: #005b9f;
+}
+body.departmentpage .second table.events thead tr label,
+body.institutionpage .second table.events thead tr label {
+  font-weight: 500;
+  color: #5f6368;
+  padding-right: 2vmax;
+  text-align: left;
+}
+body.departmentpage .second table.events thead tr label i,
+body.institutionpage .second table.events thead tr label i {
+  font-size: 1vmax;
+  padding-left: 0.5vmax;
+}
+body.departmentpage .second table.events thead tr label:hover,
+body.institutionpage .second table.events thead tr label:hover {
+  font-weight: 600;
+  font-size: 1.4vmax;
+  color: #005b9f;
+}
+body.departmentpage .second table.facultyrowone,
+body.institutionpage .second table.facultyrowone {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.144);
+}
+body.departmentpage .second table.facultyrowone thead tr th.active,
+body.institutionpage .second table.facultyrowone thead tr th.active {
+  color: #005b9f;
+}
+body.departmentpage .second table.facultycount,
+body.institutionpage .second table.facultycount {
+  background: white;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.1);
+  border-top: 2px solid #ef0273;
+  width: 70%;
+}
+body.departmentpage .second table.facultycount thead tr th,
+body.institutionpage .second table.facultycount thead tr th {
+  padding-top: 0.5vmax !important;
+  padding-bottom: 0.5vmax !important;
+  padding-left: 2.5vmax !important;
+  padding-right: 2.5vmax !important;
+  color: #ef0273;
+  font-size: 1.4vmax;
+  font-weight: 500;
+}
+body.departmentpage .second table.facultycount tbody tr td,
+body.institutionpage .second table.facultycount tbody tr td {
+  padding-top: 0.2vmax !important;
+  padding-bottom: 0.2vmax !important;
+  padding-left: 2.5vmax !important;
+  color: #5f6368;
+  font-weight: 500;
+  font-size: 1.4vmax;
+}
+body.departmentpage .second table.facultycount tbody tr:hover,
+body.institutionpage .second table.facultycount tbody tr:hover {
+  border-radius: 25vmax;
+  background-image: linear-gradient(-30deg, #2980b9, #005b9f);
+  color: white;
+}
+body.departmentpage .second table.facultycount tbody tr:hover > td,
+body.institutionpage .second table.facultycount tbody tr:hover > td {
+  color: white;
+}
+body.departmentpage .second table.programmes,
+body.institutionpage .second table.programmes {
+  color: #64636c;
+  animation-name: collegname;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+body.departmentpage .second table.programmes tbody,
+body.institutionpage .second table.programmes tbody {
+  border-radius: 10vmax;
+}
+body.departmentpage .second table.programmes tbody tr:hover,
+body.institutionpage .second table.programmes tbody tr:hover {
+  background: #dee3f0;
+  color: #3450ed;
+  animation-name: extralinkmenu;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+body.departmentpage .second table.programmes tbody tr,
+body.institutionpage .second table.programmes tbody tr {
+  border-radius: 10vmax !important;
+}
+body.departmentpage .second table.programmes tbody tr td,
+body.institutionpage .second table.programmes tbody tr td {
+  padding-left: 3vmax !important;
+}
+body.departmentpage .second table.programmes tbody tr td a,
+body.institutionpage .second table.programmes tbody tr td a {
+  color: inherit;
+  text-decoration: none;
+}
+body.departmentpage .second table.programmes thead tr,
+body.institutionpage .second table.programmes thead tr {
+  background: #1565c0;
+}
+body.departmentpage .second table.programmes thead tr th,
+body.institutionpage .second table.programmes thead tr th {
+  font-size: 1.4vmax;
+  color: white;
+  padding-top: 0.6vmax !important;
+  padding-bottom: 0.6vmax !important;
+  padding-left: 3vmax !important;
+}
+body.departmentpage .second table.programmes thead tr #c1,
+body.institutionpage .second table.programmes thead tr #c1 {
+  width: 15%;
+}
+body.departmentpage .second table.programmes thead tr #c2,
+body.institutionpage .second table.programmes thead tr #c2 {
+  width: 55%;
+}
+body.departmentpage .second table.programmes thead tr #c3,
+body.institutionpage .second table.programmes thead tr #c3 {
+  width: 15%;
+}
+body.departmentpage .second table.programmes thead tr #c4,
+body.institutionpage .second table.programmes thead tr #c4 {
+  width: 15%;
+}
+body.departmentpage .second table.programme,
+body.institutionpage .second table.programme {
+  margin-bottom: 1vmax;
+}
+body.departmentpage .second table.programme table thead tr th,
+body.institutionpage .second table.programme table thead tr th {
+  font-size: 1vmax;
+  font-weight: 600;
+  padding: 0.7vmax;
+  border-radius: 0vmax !important;
+}
+body.departmentpage .second table.programme thead tr th,
+body.institutionpage .second table.programme thead tr th {
+  background: #e7eeff;
+  border-radius: 10vmax;
+  padding: 0.6vmax;
+  padding-left: 2vmax;
+}
+body.departmentpage .second table.programme thead tr th:hover,
+body.institutionpage .second table.programme thead tr th:hover {
+  background: #e7eeff !important;
+  color: #2980b9;
+}
+body.departmentpage .second table.programme tbody td,
+body.institutionpage .second table.programme tbody td {
+  transition: padding 0.5s;
+}
+body.departmentpage .second table.programme tbody .not,
+body.institutionpage .second table.programme tbody .not {
+  padding-left: 0.6vmax;
+}
+body.departmentpage .second table.programme tbody tr:hover,
+body.institutionpage .second table.programme tbody tr:hover {
+  border-radius: 25vmax;
+  background-color: white;
+  color: #2980b9;
+}
+body.departmentpage .second table.programme tbody tr:hover > td,
+body.institutionpage .second table.programme tbody tr:hover > td {
+  padding-left: 1vmax;
+}
+body.departmentpage .second table.coursematerial,
+body.institutionpage .second table.coursematerial {
+  width: 90%;
+}
+body.departmentpage .second table.coursematerial thead tr,
+body.institutionpage .second table.coursematerial thead tr {
+  border: 0;
+  outline: 0;
+}
+body.departmentpage .second table.coursematerial thead tr td,
+body.institutionpage .second table.coursematerial thead tr td {
+  text-align: center;
+  font-size: 2.6vmax;
+  border: 0 !important;
+}
+body.departmentpage .second table.coursematerial thead tr #col11,
+body.institutionpage .second table.coursematerial thead tr #col11 {
+  width: 10%;
+}
+body.departmentpage .second table.coursematerial thead tr th,
+body.institutionpage .second table.coursematerial thead tr th {
+  padding: 0.5vmax !important;
+  color: #005b9f;
+}
+body.departmentpage .second table.coursematerial tbody tr,
+body.institutionpage .second table.coursematerial tbody tr {
+  border: 0;
+  outline: 0;
+}
+body.departmentpage .second table.coursematerial tbody tr td,
+body.institutionpage .second table.coursematerial tbody tr td {
+  border: 0 !important;
+  outline: 0;
+  font-size: 1.3vmax;
+  color: #263238;
+  padding-top: 0.5vmax;
+  padding-left: 1vmax;
+}
+body.departmentpage .second table.coursematerial tbody tr td b,
+body.institutionpage .second table.coursematerial tbody tr td b {
+  color: #ef0273 !important;
+}
+body.departmentpage .second table.coursematerial tbody tr td ul li,
+body.institutionpage .second table.coursematerial tbody tr td ul li {
+  list-style-type: none;
+}
+body.departmentpage .second table.coursematerial tbody tr td a,
+body.institutionpage .second table.coursematerial tbody tr td a {
+  text-decoration: none;
+  color: #64636c;
+}
+body.departmentpage .second table.coursematerial tbody tr td i,
+body.institutionpage .second table.coursematerial tbody tr td i {
+  padding-right: 1vmax;
+  color: #005b9f;
+}
+body.departmentpage .second table.sigma tbody tr td,
+body.institutionpage .second table.sigma tbody tr td {
+  font-size: 1.4vmax;
+}
+body.departmentpage .second table.sigma tbody tr td i,
+body.institutionpage .second table.sigma tbody tr td i {
+  font-size: 1vmax;
+  padding-right: 1vmax;
+  color: #005b9f;
+}
+body.departmentpage .second table.sigma tbody tr td ul,
+body.institutionpage .second table.sigma tbody tr td ul {
+  list-style-type: none;
+}
+body.departmentpage .second table.sigma tbody tr td ul li i,
+body.institutionpage .second table.sigma tbody tr td ul li i {
+  font-size: 1vmax;
+  padding-right: 1vmax;
+  color: #005b9f;
+}
+body.departmentpage .second table.sigma tbody tr td a,
+body.institutionpage .second table.sigma tbody tr td a {
+  color: #5f6368 !important;
+  text-decoration: none;
+}
+body.departmentpage .second table.sigma tbody tr td a i,
+body.institutionpage .second table.sigma tbody tr td a i {
+  font-size: 1vmax;
+  padding-right: 1vmax;
+  color: #005b9f;
+}
+body.departmentpage .second table,
+body.institutionpage .second table {
+  padding: 0vmax !important;
+  animation-name: colleg;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+body.departmentpage .second table thead .facultylabel,
+body.institutionpage .second table thead .facultylabel {
+  width: 50%;
+  background-color: white;
+  padding-right: 3vmax;
+}
+body.departmentpage .second table thead .facultylabel .active,
+body.institutionpage .second table thead .facultylabel .active {
+  color: #005b9f !important;
+  font-weight: 600 !important;
+}
+@media screen and (max-width: 600px) {
+  body.departmentpage .second table thead .facultylabel label i,
+body.institutionpage .second table thead .facultylabel label i {
+    display: none;
+  }
+}
+body.departmentpage .second table thead .facultylabel label,
+body.institutionpage .second table thead .facultylabel label {
+  color: #5f6368;
+  font-size: 1.3vmax;
+  font-weight: 500;
+  padding: 0.5vmax;
+}
+body.departmentpage .second table thead .facultylabel label i,
+body.institutionpage .second table thead .facultylabel label i {
+  padding-top: 0.5vmax;
+  padding-left: 1vmax;
+  padding-right: 1vmax;
+}
+body.departmentpage .second table thead .facultylabel label,
+body.institutionpage .second table thead .facultylabel label {
+  padding-right: 2vmax;
+  border-radius: 6vmax;
+  font-weight: 600;
+  color: #005b9f;
+}
+body.departmentpage .second table thead th,
+body.institutionpage .second table thead th {
+  border: 0;
+  padding: 0 !important;
+  color: #005a9fef;
+  font-size: 1.3vmax;
+  font-weight: 600;
+}
+body.departmentpage .second table tbody tr td,
+body.institutionpage .second table tbody tr td {
+  border: 0;
+}
+body.departmentpage .second table tbody tr td ul,
+body.institutionpage .second table tbody tr td ul {
+  padding-left: 2vmax;
+}
+body.departmentpage .second table tbody tr td ul li,
+body.institutionpage .second table tbody tr td ul li {
+  list-style-type: disc;
+  font-size: 1.3vmax;
+}
+body.departmentpage .second table tbody tr td span,
+body.institutionpage .second table tbody tr td span {
+  font-size: 1.4vmax;
+}
+body.departmentpage .second table #image,
+body.institutionpage .second table #image {
+  text-align: center;
+  width: 25%;
+}
+body.departmentpage .second table #image img,
+body.institutionpage .second table #image img {
+  margin-top: 2vmax;
+  height: 10vmax;
+  width: 10vmax;
+  border-radius: 10vmax;
+  text-align: center;
+}
+body.departmentpage .second table td,
+body.institutionpage .second table td {
+  width: 70vw;
+}
+body.departmentpage .second table td h2,
+body.institutionpage .second table td h2 {
+  font-size: 1.8vmax;
+}
+body.departmentpage .second table td .facultyinformation thead tr th,
+body.institutionpage .second table td .facultyinformation thead tr th {
+  width: 25%;
+}
+body.departmentpage .second table .infotable,
+body.institutionpage .second table .infotable {
+  border-radius: 0.3vmax;
+  background: #e7eeff;
+}
+body.departmentpage .second table .infotable td,
+body.institutionpage .second table .infotable td {
+  padding-left: 1vmax;
+  transition: padding 1s;
+}
+body.departmentpage .second table .infotable td:hover,
+body.institutionpage .second table .infotable td:hover {
+  padding-left: 3vmax;
+}
+body.departmentpage .location,
+body.institutionpage .location {
+  display: none;
+  opacity: 0.9;
+  background: white;
+  border-bottom: 3px solid #3450ed;
+  color: white !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 6vh;
+  left: 17vw;
+  width: 88%;
+  z-index: 109;
+  padding-top: 0.2vmax;
+  padding-left: 2vmax;
+  transition: margin 0.7s, background 0.8s;
+  height: 2.4vmax;
+}
+body.departmentpage .location .shortcontent,
+body.institutionpage .location .shortcontent {
+  display: none;
+}
+body.departmentpage .location .shortcontent span,
+body.institutionpage .location .shortcontent span {
+  color: #ef0273 !important;
+  font-size: 1.1vmax;
+}
+body.departmentpage .location span,
+body.institutionpage .location span {
+  font-size: 1.3vmax;
+  font-style: italic;
+  color: #ef0273 !important;
+  font-weight: 600;
+}
+body.departmentpage .location span i,
+body.institutionpage .location span i {
+  font-size: 1vmax;
+  color: #ef0273 !important;
+}
+body.departmentpage .location label,
+body.institutionpage .location label {
+  font-style: italic;
+  padding-left: 10vw;
+  color: #005b9f !important;
+  font-weight: 500;
+  font-size: 1.3vmax;
+}
+body.departmentpage .location label a,
+body.institutionpage .location label a {
+  text-decoration: none;
+  color: inherit;
+}
+body.departmentpage .extracontent,
+body.institutionpage .extracontent {
+  display: none;
+}
+body.departmentpage .profile:hover > thead > #movearrow,
+body.institutionpage .profile:hover > thead > #movearrow {
+  background: #005b9f;
+  width: 65%;
+}
+body.departmentpage .profile,
+body.institutionpage .profile {
+  width: 37vmax;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  color: #354860;
+  border-radius: 0.3vmax;
+  font-size: 1vmax !important;
+}
+body.departmentpage .profile #movearrow,
+body.institutionpage .profile #movearrow {
+  background: red;
+  position: absolute;
+  height: 0.2vmax;
+  width: 30%;
+  transition: width 1s, background 1s;
+}
+body.departmentpage .profile tfoot tr th,
+body.institutionpage .profile tfoot tr th {
+  padding-bottom: 2vmax;
+  padding-top: 1vmax;
+  width: 50%;
+  text-align: center;
+}
+body.departmentpage .profile tfoot tr th img,
+body.institutionpage .profile tfoot tr th img {
+  z-index: 999999999;
+  height: 10vmax;
+  width: 10vmax;
+  border-radius: 10vmax;
+}
+body.departmentpage .profile tfoot tr td,
+body.institutionpage .profile tfoot tr td {
+  position: relative;
+  padding-right: 0.3vmax;
+  top: -1vmax;
+  width: auto;
+  height: auto;
+}
+body.departmentpage .profile tfoot tr td a,
+body.institutionpage .profile tfoot tr td a {
+  text-decoration: none;
+}
+body.departmentpage .profile tfoot tr td span,
+body.institutionpage .profile tfoot tr td span {
+  font-size: 1.2vmax !important;
+}
+body.departmentpage .profile tfoot tr td span i,
+body.institutionpage .profile tfoot tr td span i {
+  font-size: 1vmax;
+  padding-right: 0.5vmax;
+}
+body.departmentpage .profile thead tr th,
+body.institutionpage .profile thead tr th {
+  padding: 0.6vmax !important;
+  padding-left: 1vmax !important;
+  color: #354860;
+  font-size: 1.2vmax;
+}
+body.departmentpage .profile thead tr th i,
+body.institutionpage .profile thead tr th i {
+  font-size: 1.1vmax !important;
+  padding-right: 1vmax;
+}
+body.departmentpage .profile thead tr td,
+body.institutionpage .profile thead tr td {
+  text-align: end;
+  padding-right: 1.5vmax;
+}
+body.departmentpage .profile thead tr td i,
+body.institutionpage .profile thead tr td i {
+  font-size: 1.1vmax;
+  padding: 1vmax;
+  border-radius: 20vmax;
+}
+body.departmentpage .profile thead tr td div,
+body.institutionpage .profile thead tr td div {
+  display: none;
+  position: absolute;
+  text-align: left;
+  top: 2%;
+  left: 18%;
+  width: 70%;
+  font-size: 1.2vmax;
+  z-index: 9999999999;
+  padding: 0.5vmax;
+  border-radius: 0.6vmax;
+  background: #dee3f0;
+}
+body.departmentpage .profile thead tr td div span,
+body.institutionpage .profile thead tr td div span {
+  font-size: 1.1vmax;
+  font-weight: 600;
+}
+body.departmentpage .profile thead tr td div i,
+body.institutionpage .profile thead tr td div i {
+  margin-left: 0vmax;
+  padding-right: 0.7vmax;
+}
+body.departmentpage .profile thead tr td > label:hover > div,
+body.institutionpage .profile thead tr td > label:hover > div {
+  display: block;
+}
+body.departmentpage .profile #contactme,
+body.institutionpage .profile #contactme {
+  position: absolute;
+  background: #ff7b00;
+  color: white;
+  top: 90%;
+  left: 21%;
+  font-weight: 600;
+  display: block;
+  margin: auto;
+  width: 50%;
+  padding: 0.4vmax;
+  padding-left: 1vmax;
+  padding-right: 1vmax;
+  font-size: 1.3vmax;
+  border-radius: 10vmax;
+  padding-top: 0.6vmax;
+}
+body.departmentpage .profile #contactme tr td,
+body.institutionpage .profile #contactme tr td {
+  text-align: center;
+  width: auto;
+  font-size: 1.1vmax;
+  padding-left: 2vmax;
+}
+
+body.boardofmanagementpage .details {
+  margin-top: 3vmax;
+}
+body.boardofmanagementpage .details .row {
+  font-size: 1.4vmax;
+  color: #5f5f5f;
+  margin-top: 1vmax;
+  padding: 1vmax;
+  text-align: justify;
+}
+body.boardofmanagementpage .details .row .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  float: left;
+  width: 20%;
+  margin-right: 2vmax;
+  margin-bottom: 1vmax;
+  padding-left: 1.5vmax;
+  padding-right: 1.5vmax;
+  border-radius: 0.5vmax;
+}
+body.boardofmanagementpage .details .row .card .card-body img {
+  margin-top: 2vmax;
+  width: 10vmax !important;
+  height: 10vmax !important;
+  border-radius: 10vmax;
+}
+body.boardofmanagementpage .details .row .card .card-body h2,
+body.boardofmanagementpage .details .row .card .card-body h3 {
+  padding-top: 0.5vmax;
+  font-size: 1.3vmax;
+  color: #1565c0;
+}
+body.boardofmanagementpage .details .row .card .card-footer label {
+  color: #1565c0;
+  padding-top: 0.5vmax;
+  font-size: 1.2vmax;
+}
+body.boardofmanagementpage .modal .modal-dialog {
+  width: 50vw;
+}
+body.boardofmanagementpage .modal .modal-dialog .modal-content .modal-header h4 {
+  font-size: 1.5vmax;
+  padding-left: 1vmax;
+  padding-top: 0.5vmax;
+}
+body.boardofmanagementpage .modal .modal-dialog .modal-content .modal-header label {
+  font-size: 1.6vmax;
+  color: black;
+  opacity: 1;
+  position: absolute;
+  top: 1.2vmax;
+  right: 3vmax;
+}
+body.boardofmanagementpage .modal .modal-dialog .modal-content .modal-body {
+  width: 50vw;
+}
+body.boardofmanagementpage .modal .modal-dialog .modal-content .modal-body video {
+  padding: 1vmax;
+  margin-left: 2.4vmax;
+  display: block;
+  width: 90%;
+  height: 70%;
+}
+
+body.contactuspage .map {
+  margin-top: 6vmax !important;
+}
+body.contactuspage .map iframe {
+  border-radius: 0.5vmax;
+  width: 100%;
+  height: 60vh;
+}
+body.contactuspage .header1 {
+  margin-top: 1vmax;
+  padding-right: 3vmax;
+  padding-left: 3vmax;
+}
+body.contactuspage .header1 img {
+  width: 23vmax;
+  height: 13vmax;
+  border-radius: 0.5vmax;
+  margin: auto;
+  display: block;
+}
+body.contactuspage .header1 h1 {
+  font-size: 1.5vmax;
+  padding-bottom: 0.4vmax;
+  border-bottom: 2px solid #005b9f;
+  color: #00303f;
+}
+body.contactuspage .header1 p {
+  font-size: 1.3vmax;
+  color: grey;
+}
+body.contactuspage .enquiry {
+  padding-right: 3vmax;
+  padding-left: 3vmax;
+}
+body.contactuspage .enquiry .map {
+  width: 100%;
+  background: red;
+}
+body.contactuspage .enquiry h2 {
+  font-size: 1.7vmax;
+  padding-bottom: 1vmax;
+  margin-top: 3vmax;
+  color: #00303f;
+}
+body.contactuspage .enquiry #submit {
+  border: 0 !important;
+  outline: 0;
+  margin: auto;
+  display: block;
+  background: #005b9f;
+  color: white;
+  width: 6%;
+  font-weight: 600;
+  border-radius: 0.4vmax;
+  padding: 0.3vmax !important;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+body.contactuspage .enquiry input,
+body.contactuspage .enquiry textarea {
+  border: 0;
+  outline: 0;
+  margin-left: 0.1vmax;
+  background: white;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 1vmax;
+  width: 90%;
+  box-shadow: none;
+  color: #e06e02;
+  font-size: 1.3vmax;
+  padding-top: 1vmax;
+  transition: background 0.5s, border 1s, transform 0.3s;
+  margin-bottom: 1vmax !important;
+}
+body.contactuspage .enquiry input:focus,
+body.contactuspage .enquiry textarea:focus {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  border-color: white;
+  background: white;
+  color: #2980b9;
+  border-bottom: 2px solid #3450ed;
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+body.contactuspage .enquiry textarea {
+  margin-top: 1vmax;
+  font-size: 1.3vmax;
+}
+
+body.reloadpage {
+  background: #0225ef;
+  color: white;
+  /* Add animation to "page content" */
+}
+body.reloadpage .container-fluid .row {
+  padding-top: 10vh;
+  margin: auto;
+  display: auto;
+}
+body.reloadpage h1 {
+  text-align: center;
+  font-size: 2.4vmax;
+}
+body.reloadpage h4 {
+  font-size: 1.6vmax;
+}
+body.reloadpage img {
+  width: 15vmax;
+  height: 15vmax;
+}
+body.reloadpage #loader {
+  z-index: 1;
+  margin: auto;
+  display: block;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #005b9f;
+  width: 4vmax;
+  height: 4vmax;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body.reloadpage .animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+body.editpage .content {
+  border-radius: 0.5vmax;
+  border-top: 1px solid #d1d1d1;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+}
+body.editpage .first div label {
+  padding-top: 1vmax;
+}
+body.editpage .first div .dropdown {
+  display: none;
+  position: fixed;
+  top: 4vmax;
+  border-radius: 0.5vmax;
+  left: 4vw;
+  width: 20vw;
+  padding: 1vmax;
+  padding-left: 2vmax;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+body.editpage .first div .dropdown h1 {
+  font-size: 1.5vmax;
+  margin-top: 1vmax;
+  line-height: 3.5vmax;
+  padding-left: 2vmax;
+  color: #2980b9;
+  background: #e7eeff;
+  border-radius: 10vmax;
+}
+body.editpage .first div .dropdown h1 i {
+  font-size: 1vmax;
+  padding-right: 1vmax;
+  color: #2980b9;
+}
+body.editpage .first div:hover > .dropdown {
+  animation-name: collegename;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  display: block;
+}
+body.editpage .second {
+  color: #b6bcc3;
+  margin-top: -1vmax;
+}
+body.editpage .second .inputfile {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+body.editpage .second #image {
+  width: 100%;
+  margin-top: 1vmax;
+}
+body.editpage .second #image span {
+  font-size: 1.15vmax;
+  padding-bottom: 3vmax;
+}
+body.editpage .second #resume {
+  width: 100%;
+  margin-top: 0.4vmax;
+}
+body.editpage .second #resume span {
+  font-size: 1.15vmax;
+  padding-bottom: 3vmax;
+}
+body.editpage .second #button {
+  text-align: center;
+  border: 0;
+  outline: 0;
+  padding: 0.4vmax;
+  color: white;
+  width: 10%;
+  margin-left: 46%;
+  border-radius: 0.3vmax;
+  font-size: 1.3vmax;
+  font-weight: 600;
+  margin-top: 1vmax;
+  opacity: 0.9;
+  background: #3450ed;
+  padding-top: 0.7vmax;
+}
+body.editpage .second #button2,
+body.editpage .second #button3 {
+  text-align: center;
+  border: 0;
+  outline: 0;
+  padding: 0.1vmax;
+  color: white;
+  width: 20%;
+  border-radius: 0.3vmax;
+  font-size: 1.3vmax;
+  font-weight: 600;
+  margin-top: 1vmax;
+  opacity: 0.9;
+  background: #00b653;
+  padding-top: 0.5vmax;
+  z-index: 999999999999;
+}
+body.editpage .second label label {
+  padding-top: 2vmax;
+  border-bottom: 3px solid rgba(128, 128, 128, 0.171);
+}
+body.editpage .second .inputfile + label {
+  font-size: 1.4vmax;
+  font-weight: 500;
+  width: 70%;
+  padding-left: 3.3vmax;
+  color: grey;
+  background: white;
+  border-radius: 0.2vmax;
+  border-bottom: 3px solid rgba(128, 128, 128, 0.171);
+  display: inline-block;
+}
+body.editpage .second #vtuguide {
+  font-size: 1.1vmax;
+}
+body.editpage .second .select-style {
+  color: #e06e02 !important;
+  transition: background 0.5s, border 1s;
+}
+body.editpage .second .select-style span {
+  color: #6e6c6c;
+  font-size: 1.15vmax;
+}
+body.editpage .second .select-style select {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  font-size: 1.3vmax;
+  border-bottom: 3px solid rgba(128, 128, 128, 0.171);
+  transition: background 0.5s, border 1s;
+}
+body.editpage .second .select-style select:focus {
+  outline: none;
+}
+body.editpage .second h1 {
+  font-size: 1.5vmax;
+  color: green;
+}
+body.editpage .second h1 span {
+  color: blue;
+}
+body.editpage .second label {
+  width: 90%;
+  font-size: 1.15vmax;
+}
+body.editpage .second input:focus,
+body.editpage .second .select-style > select:focus {
+  background: white;
+  color: #2980b9;
+  border-radius: 0.2vmax;
+  border-bottom: 3px solid #3450ed;
+}
+body.editpage .second label:hover {
+  color: blue;
+}
+body.editpage .second input {
+  border: 0;
+  outline: 0;
+  margin-left: 0.1vmax;
+  background: white;
+  border-radius: 0.2vmax;
+  border-bottom: 3px solid rgba(128, 128, 128, 0.171);
+  width: 100%;
+  color: #e06e02;
+  font-size: 1.3vmax;
+  transition: background 0.5s, border 1s;
+  margin-bottom: 1vmax !important;
+}
+body.editpage .second #show1 span,
+body.editpage .second #show2 span,
+body.editpage .second #show3 span {
+  font-size: 1.2vmax;
+  font-weight: 600;
+}
+body.editpage .second #show1 label,
+body.editpage .second #show2 label,
+body.editpage .second #show3 label {
+  color: green !important;
+}
+body.editpage .second .popupwindow {
+  display: none;
+  font-size: 1.4vmax;
+  text-align: center;
+  padding-top: 0.5vmax;
+  position: absolute;
+  width: 30%;
+  top: -50%;
+  left: 32%;
+  background: white;
+  border-radius: 0.2vmax;
+  border-top: 1px solid #d1d1d1;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+body.editpage .second .imagepopup,
+body.editpage .second .resumepopup {
+  display: none;
+  padding: 2vmax;
+  color: #3450ed;
+  position: absolute;
+  left: -60%;
+  z-index: 9999999999;
+  width: auto;
+  bottom: 2%;
+  border-radius: 0.4vmax;
+  background: white;
+  border-top: 1px solid #d1d1d1;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.2vmax;
+}
+body.editpage .second .imagepopup span,
+body.editpage .second .resumepopup span {
+  color: red;
+}
+body.editpage .second label:hover > .imagepopup {
+  display: block;
+}
+body.editpage .second label:hover > .resumepopup {
+  display: block;
+}
+
+body.loginpage .login {
+  position: relative;
+  border-radius: 1vmax;
+  top: 15%;
+  background-color: white;
+  width: 30%;
+}
+body.loginpage .login table thead {
+  border: 0;
+}
+body.loginpage .login table thead tr {
+  border: 0;
+}
+body.loginpage .login table thead tr th {
+  border-bottom: 1px solid grey;
+  color: #5395f7;
+  padding-top: 2vmax;
+  font-size: 2.3vmax;
+  text-align: center;
+  font-weight: 500;
+}
+body.loginpage .login table tfoot tr td {
+  border: 0;
+  text-align: end;
+}
+body.loginpage .login table tfoot tr td #button {
+  border: 0;
+  outline: 0;
+  padding: 0.4vmax;
+  color: white;
+  border-radius: 0.3vmax;
+  font-size: 1.3vmax;
+  font-weight: 600;
+  margin-top: -1.3vmax;
+  opacity: 0.9;
+  background: #3450ed;
+  padding-left: 1.4vmax;
+  padding-right: 1.4vmax;
+}
+body.loginpage .login table tbody tr td {
+  border: 0;
+  color: #ff8800;
+  padding-top: 1vmax;
+  font-size: 1.5vmax;
+  text-align: center;
+  font-weight: 500;
+}
+body.loginpage .login table tbody tr td input {
+  border: 0;
+  outline: 0;
+  margin-left: 0.1vmax;
+  border-radius: 10vmax;
+  background: #e7eeff;
+  width: 100%;
+  padding: 0.7vmax;
+  color: #e06e02;
+  padding-left: 3vmax;
+  padding-right: 1vmax;
+  font-size: 1.4vmax;
+  transition: background 0.5s, border 0.5s;
+  margin-bottom: 2vmax;
+}
+body.loginpage .login table tbody tr td .select-style {
+  margin: auto;
+  width: 80%;
+  padding: 0.2vmax;
+  border-radius: 10vmax;
+  overflow: hidden;
+  border: 0;
+  outline: 0;
+  font-size: 1.4vmax;
+  color: grey;
+  background: #e7eeff;
+}
+body.loginpage .login table tbody tr td .select-style select {
+  width: 80%;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+}
+body.loginpage .login table tbody tr td .select-style select:focus {
+  outline: 0;
+  border: 0;
+  color: #e06e02;
+}
+body.loginpage .login table tbody tr td input:focus {
+  background: white;
+  border-radius: 0.2vmax;
+  border-bottom: 2px solid #3450ed;
+}
+
+.effect5 {
+  position: relative;
+}
+
+.effect5:before, .effect5:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  top: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 100%;
+  background: #777;
+  -webkit-box-shadow: 0 35px 20px #777;
+  -moz-box-shadow: 0 35px 20px #777;
+  box-shadow: 0 35px 20px #777;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+.effect5:after {
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+.foot {
+  height: AUTO !important;
+}
+.foot .footer {
+  margin-top: 1vmax;
+  padding: 2vmax;
+  background-color: #005b9f;
+  color: white;
+}
+.foot .footer table {
+  background-color: #005b9f;
+}
+.foot .footer table tr td {
+  border: 0;
+  font-size: 1.2vmax;
+  width: 33%;
+}
+.foot .footer table tr td h1 {
+  font-size: 2.1vmax;
+}
+.foot .footer table tr td label {
+  font-size: 1.3vmax;
+  font-weight: 500;
+}
+.foot .footer table tr td a {
+  color: white;
+  font-size: 1.3vmax;
+  text-decoration: none;
+  padding: 1vmax;
+  margin-top: 1vmax;
+}
+.foot .footer table tr td img {
+  width: 10vmax;
+  height: 10vmax;
+  border-radius: 10vmax;
+}
+.foot .footer table tr td p {
+  text-align: left !important;
+  color: white;
+}
+.foot label {
+  color: white;
+}
+.foot i {
+  color: white;
+}
+
+.copyright {
+  font-size: 1.3vmax;
+  font-weight: 500;
+  border: 0;
+  outline: 0;
+}
+.copyright table {
+  border: 0;
+  outline: 0;
+  background: white;
+}
+.copyright table thead tr #colc {
+  width: 20%;
+}
+.copyright table thead tr #colb {
+  width: 40%;
+  text-align: left;
+}
+.copyright table thead tr #cola {
+  width: 40%;
+}
+.copyright table thead tr td {
+  border: 0;
+  outline: 0;
+  padding-right: 3vmax;
+}
+.copyright table thead tr td i {
+  color: #005b9f;
+}
+.copyright table thead tr td label {
+  padding-right: 2.5vmax;
+}
+.copyright table thead tr td label i {
+  font-size: 1.2vmax;
+}
+
+hr.new2 {
+  border-top: 1px dashed red;
+}
+
+/*# sourceMappingURL=sitpage.css.map */

@@ -8,6 +8,8 @@ import subprocess
 import time
 import uuid
 import winsound
+import threading
+import queue
 from typing import Optional
 
 # ---------------------------------------------------------------------------
@@ -20,7 +22,7 @@ ENGINE_SCRIPT = os.path.join(PROJECT_ROOT, "run_engine.py")
 # ---------------------------------------------------------------------------
 # Tuning constants
 # ---------------------------------------------------------------------------
-POLL_INTERVAL_S       = 0.5  # seconds (enhanced from 1s)
+POLL_INTERVAL_S       = 0.3  # seconds (enhanced from 1s)
 ENGINE_STARTUP_WAIT_S = 3    # seconds to wait for Playwright to initialise
 MAX_ACTOR_LOOPS       = 25   # safety cap: max Actor decisions per step
 MAX_HEAL_RETRIES      = 3    # max consecutive failures before skipping a step
@@ -85,6 +87,8 @@ def _poll_bridge(task_id: str, timeout_s: int = 90) -> dict:
     Raises TimeoutError if no response within timeout_s.
     """
     deadline = time.time() + timeout_s
+    spinner_chars = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
+    spinner_idx = 0
 
     while time.time() < deadline:
         try:
@@ -98,11 +102,28 @@ def _poll_bridge(task_id: str, timeout_s: int = 90) -> dict:
             time.sleep(POLL_INTERVAL_S)
             continue
 
-        if data.get("status", "pending") != "pending":
+        status = data.get("status", "pending")
+        
+        if status == "pending":
+            msg = "Thinking..."
+        elif status == "uploading":
+            msg = "Analyzing Screen..."
+        elif status == "executing":
+            msg = "Taking Action..."
+        else:
+            # Clear UI line when returning
+            sys.stdout.write("\r" + " " * 60 + "\r")
+            sys.stdout.flush()
             return data
 
+        sys.stdout.write(f"\r{spinner_chars[spinner_idx % len(spinner_chars)]} [Vantage-OS] {msg}")
+        sys.stdout.flush()
+        spinner_idx += 1
+        
         time.sleep(POLL_INTERVAL_S)
-
+        
+    sys.stdout.write("\r" + " " * 60 + "\r")
+    sys.stdout.flush()
     raise TimeoutError(f"Engine did not respond to task_id={task_id} within {timeout_s}s.")
 
 
@@ -155,7 +176,7 @@ def start_engine() -> subprocess.Popen:
     )
 
     logger.info("[CEO] Handshake started. Waiting for Engine to signal READY...")
-    timeout = 15
+    timeout = 40
     start = time.time()
     while time.time() - start < timeout:
         try:
@@ -165,9 +186,21 @@ def start_engine() -> subprocess.Popen:
                     return engine_proc
         except:
             pass
-        time.sleep(0.5)
+        time.sleep(0.1)
 
     logger.error("[CEO] Handshake TIMEOUT. Engine failed to reach READY state.")
+    try:
+        log_file = os.path.join(PROJECT_ROOT, "vantage.log")
+        if os.path.exists(log_file):
+            with open(log_file, "r") as f:
+                lines = f.readlines()
+                logger.error("--- Last 10 lines of vantage.log ---")
+                for line in lines[-10:]:
+                    logger.error(line.strip())
+                logger.error("------------------------------------")
+    except Exception as e:
+        logger.error(f"[CEO] Could not read vantage.log: {e}")
+
     if engine_proc.poll() is None:
         engine_proc.terminate()
     raise RuntimeError("Engine failed to reach READY state.")
@@ -216,6 +249,7 @@ def run_mission(goal: str) -> None:
         # -- 3. Execute each step -----------------------------------------
         actor = Actor()
         current_url = "about:blank"
+        thought_history = []
         
         for step_idx, step in enumerate(steps): # index used for Actor context
             divider = "=" * 64
@@ -234,7 +268,8 @@ def run_mission(goal: str) -> None:
                         full_plan=steps, 
                         current_step_idx=step_idx, 
                         current_url=current_url,
-                        last_error=last_error
+                        last_error=last_error,
+                        thought_history=thought_history
                     )
                 except Exception as e:
                     logger.error(f"[CEO] Actor error: {e}")
@@ -243,6 +278,7 @@ def run_mission(goal: str) -> None:
 
                 if action.action_type.lower() == "done":
                     logger.info(f"[CEO] Step {step_idx} complete. Thought: {action.thought}")
+                    thought_history.append(action.thought)
                     break
 
                 task_id = _write_bridge(action)
@@ -262,6 +298,7 @@ def run_mission(goal: str) -> None:
 
                 if status == "completed":
                     logger.info("[CEO] Action completed.")
+                    thought_history.append(action.thought)
                     last_error = None
                     heal_count = 0
                 elif status == "failed":
@@ -304,14 +341,55 @@ def shutdown_engine(engine_proc) -> None:
 
 if __name__ == "__main__":
     engine_proc = None
+    input_q = queue.Queue()
+    
+    def _read_kbd():
+        while True:
+            try:
+                line = input()
+                input_q.put(line)
+            except EOFError:
+                break
+                
     try:
         engine_proc = start_engine()
+        t = threading.Thread(target=_read_kbd, daemon=True)
+        t.start()
+        
         while True:
             print("\n" + "=" * 64)
-            mission = input("[VANTAGE] Task Done. Enter next mission (or 'q' to quit, 'manual' to pause): ").strip()
+            print("[VANTAGE] Waiting for next mission... (Use browser UI or type here, 'q' to quit, 'manual' to pause)")
             print("=" * 64)
             
-            if not mission: continue
+            mission = None
+            
+            while True:
+                # 1. Check Terminal UI
+                try:
+                    mission = input_q.get_nowait().strip()
+                except queue.Empty:
+                    pass
+                
+                # 2. Check Browser UI
+                if not mission:
+                    try:
+                        with open(BRIDGE_FILE, "r") as f:
+                            data = json.load(f)
+                        if data.get("status") == "new_mission":
+                            mission = data.get("mission", "").strip()
+                            if mission:
+                                print(f"\n[CEO] Received Mission from Browser UI: {mission}")
+                                data["status"] = "pending"
+                                data["action_type"] = ""
+                                with open(BRIDGE_FILE, "w") as f:
+                                    json.dump(data, f, indent=2)
+                    except Exception:
+                        pass
+                
+                if mission:
+                    break
+                time.sleep(POLL_INTERVAL_S)
+                
             if mission.lower() == 'q': break
             
             if mission.lower() == 'manual':
@@ -323,9 +401,13 @@ if __name__ == "__main__":
                     with open(BRIDGE_FILE, "w") as f:
                         json.dump(data, f, indent=2)
                 except: pass
-                input("[VANTAGE] AI Paused. Use browser normally. Press ENTER to return to mission control...")
+                print("[VANTAGE] AI Paused. Use browser normally. Type 'resume' into terminal to loop back...")
                 continue
             
+            if mission.lower() == 'resume':
+                # Resume handled implicitly by looping
+                continue
+                
             run_mission(mission)
 
     except KeyboardInterrupt:

@@ -1,0 +1,6 @@
+2026/04/04-14:00:35.416 406c Reusing MANIFEST E:\hackathon projects\Orbit\vantage_profile\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/04/04-14:00:35.417 406c Recovering log #10
+2026/04/04-14:00:35.418 406c Reusing old log E:\hackathon projects\Orbit\vantage_profile\Default\EdgeCoupons/coupons_data.db/000010.log 
+2026/04/04-14:01:04.612 6274 Level-0 table #14: started
+2026/04/04-14:01:04.614 6274 Level-0 table #14: 682080 bytes OK
+2026/04/04-14:01:04.663 6274 Delete type=0 #10

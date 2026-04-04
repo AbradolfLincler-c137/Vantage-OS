@@ -16,13 +16,11 @@ logger = logging.getLogger(__name__)
 # Waterfall model tier - tried in order on 429 / exhaustion
 # ---------------------------------------------------------------------------
 _PLANNER_MODELS = [
-    "gemini-3.1-pro-preview",   # Primary
-    "gemini-2.5-pro",           # Tier 2
-    "gemini-2.5-flash",         # Tier 3
-    "gemini-1.5-flash",         # Emergency fallback
+    "gemini-2.5-flash",
+    "gemini-1.5-flash",
 ]
 
-_RETRY_SLEEP_S   = 5    # Pause between model switches (rate-limiter breath)
+_RETRY_SLEEP_S   = 1.0   # Pause between model switches (rate-limiter breath)
 _COOLDOWN_SLEEP_S = 60  # Hard cooldown if ALL models exhausted
 
 _SYSTEM_INSTRUCTION = """
@@ -39,14 +37,7 @@ Rules:
 """
 
 
-def _is_rate_limit_error(e: Exception) -> bool:
-    """Return True if `e` is a 429 RESOURCE_EXHAUSTED error."""
-    # google.genai ClientError exposes .code (int HTTP status)
-    code = getattr(e, "code", None)
-    if code == 429:
-        return True
-    # Fallback: string inspection for environments where .code is absent
-    return "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e)
+
 
 
 class Planner:
@@ -107,25 +98,29 @@ class Planner:
         # -- First pass: waterfall through all models ----------------------
         for model_name in _PLANNER_MODELS:
             try:
+                try:
+                    bridge_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "task_bridge.json")
+                    with open(bridge_path, "r") as f:
+                        bridge_data = json.load(f)
+                    bridge_data["active_brain"] = f"PLANNER: {model_name.replace('gemini-', '')}"
+                    bridge_data["brain_status"] = "Determining Path..."
+                    with open(bridge_path, "w") as f:
+                        json.dump(bridge_data, f, indent=2)
+                except Exception: pass
+                
                 logger.info(f"[Planner] Trying model: {model_name}")
                 raw = self._call_model(model_name, prompt)
                 logger.info(f"[Planner] Response from {model_name} ({len(raw)} chars)")
                 return self._parse(raw)
 
             except Exception as e:
-                if _is_rate_limit_error(e):
-                    logger.warning(
-                        f"[RECOVERY] {model_name} exhausted (429). "
-                        f"Trying next model in {_RETRY_SLEEP_S}s..."
-                    )
-                    last_exception = e
-                    time.sleep(_RETRY_SLEEP_S)
-                    continue
-                else:
-                    # Non-quota error - re-raise immediately
-                    raise RuntimeError(
-                        f"[Planner] Non-quota error on {model_name}: {e}"
-                    ) from e
+                logger.warning(
+                    f"[RECOVERY] {model_name} failed (429/Safety/NotFound): {e}. "
+                    f"Trying next model in {_RETRY_SLEEP_S}s..."
+                )
+                last_exception = e
+                time.sleep(_RETRY_SLEEP_S)
+                continue
 
         # -- All models exhausted -> Hard Cooldown --------------------------
         print(

@@ -19,12 +19,12 @@ logger = logging.getLogger(__name__)
 # Waterfall model tier - tried in order on 429 / exhaustion
 # ---------------------------------------------------------------------------
 _ACTOR_MODELS = [
-    "gemini-3.1-flash-lite-preview",  # Primary (fast, vision-capable)
-    "gemini-2.5-flash",               # Tier 2
-    "gemini-1.5-flash",               # Emergency fallback
+    "gemini-3.1-flash-lite-preview",
+    "gemini-2.5-flash",
+    "gemini-1.5-flash"
 ]
 
-_RETRY_SLEEP_S    = 5    # Pause between model switches
+_RETRY_SLEEP_S    = 1.0    # Pause between model switches
 _COOLDOWN_SLEEP_S = 60   # Hard cooldown if ALL models exhausted
 
 _SYSTEM_INSTRUCTION = """
@@ -74,12 +74,7 @@ Output ONLY valid JSON - no markdown:
 
 
 
-def _is_rate_limit_error(e: Exception) -> bool:
-    """Return True if `e` is a 429 RESOURCE_EXHAUSTED error."""
-    code = getattr(e, "code", None)
-    if code == 429:
-        return True
-    return "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e)
+
 
 
 class Actor:
@@ -119,6 +114,7 @@ class Actor:
         current_step_idx: int,
         current_url: str,
         last_error: Optional[str] = None,
+        thought_history: Optional[list[str]] = None
     ) -> ActionSchema:
         """
         Decide the next atomic action given viewport and context.
@@ -151,10 +147,12 @@ class Actor:
 
         # Build prompt --------------------------------------------------------
         current_step = full_plan[current_step_idx] if current_step_idx < len(full_plan) else "FINISHING"
+        thought_str = "\n".join([f" - {t}" for t in thought_history]) if thought_history else "None"
         
         parts = [
             f"Overall Mission: {goal}",
             f"Current URL:     {current_url}",
+            f"Prior Thoughts:\n{thought_str}",
             f"Full Plan:        {json.dumps(full_plan, indent=2)}",
             f"Current Step Index: {current_step_idx}",
             f"Current Step Target: {current_step}",
@@ -178,27 +176,35 @@ class Actor:
         image = Image.open(viewport_path)
         last_exception: Exception = RuntimeError("No models attempted.")
 
-        # -- First pass: waterfall through all models ----------------------
         for model_name in _ACTOR_MODELS:
             try:
+                # Update Bridge directly through CEO passing the state, but Actor logs the attempt
+                try:
+                    bridge_path = os.path.join(project_root, "task_bridge.json")
+                    with open(bridge_path, "r") as f:
+                        bridge_data = json.load(f)
+                    bridge_data["active_brain"] = f"ACTOR: {model_name.replace('gemini-', '')}"
+                    bridge_data["brain_status"] = f"Determining Step {current_step_idx}..."
+                    with open(bridge_path, "w") as f:
+                        json.dump(bridge_data, f, indent=2)
+                except Exception: pass
+                
                 logger.info(f"[Actor] Trying model: {model_name}")
                 raw = self._call_model(model_name, prompt, image)
                 logger.info(f"[Actor] Response from {model_name} ({len(raw)} chars)")
+                
+                # If we suceed, update main script
+                self.successful_model = model_name
                 return self._parse(raw)
 
             except Exception as e:
-                if _is_rate_limit_error(e):
-                    logger.warning(
-                        f"[RECOVERY] {model_name} exhausted (429). "
-                        f"Trying next model in {_RETRY_SLEEP_S}s..."
-                    )
-                    last_exception = e
-                    time.sleep(_RETRY_SLEEP_S)
-                    continue
-                else:
-                    raise RuntimeError(
-                        f"[Actor] Non-quota error on {model_name}: {e}"
-                    ) from e
+                logger.warning(
+                    f"[RECOVERY] {model_name} failed (429/Safety/NotFound): {e}. "
+                    f"Trying next model in {_RETRY_SLEEP_S}s..."
+                )
+                last_exception = e
+                time.sleep(_RETRY_SLEEP_S)
+                continue
 
         # -- All models exhausted -> Hard Cooldown --------------------------
         print(
