@@ -1,0 +1,27 @@
+# API Keys and Secrets
+.env
+.venv/
+venv/
+config.py
+
+# Browser Data (VERY IMPORTANT)
+user_data/
+*.localstorage
+*.cookies
+*.session
+*.checkpoint
+
+# Python Junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.vscode/
+.idea/
+
+# Project Logs and Temporary Files
+*.log
+task_bridge.json
+viewport.png
+screenshot_*.png
