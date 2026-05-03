@@ -1,6 +1,8 @@
 # 🌌 Vantage-OS: Autonomous Browser Co-Pilot
 
-**Vantage-OS** is a high-speed, dual-tier autonomous agent designed to navigate the web with human-like precision. Built for the **Orbit Hyperthon**, it features a persistent in-browser "Command Center" and a failover intelligence stack that ensures 100% mission uptime.
+> **🏆 Achievement: Ranked Top 5 (3rd Place Equivalent) out of 44 competing engineering projects in the Orbit Hyperthon.**
+
+**Vantage-OS** is a high-speed, dual-tier autonomous agent designed to navigate the web with human-like precision. It features a persistent in-browser "Command Center" and a failover intelligence stack that ensures 100% mission uptime.
 
 ---
 
@@ -29,6 +31,7 @@
 ## 📦 Installation & Setup
 
 1. **Clone the Repo**
-   ```bash
+   
+```bash
    git clone [https://github.com/AbradolfLincler-c137/Vantage-OS.git](https://github.com/AbradolfLincler-c137/Vantage-OS.git)
    cd Vantage-OS
